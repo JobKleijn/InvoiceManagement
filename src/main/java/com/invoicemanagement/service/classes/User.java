@@ -1,4 +1,4 @@
-package com.invoicemanagement.service.Classes;
+package com.invoicemanagement.service.classes;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -26,15 +26,16 @@ public class User {
 
     //Validates the user object
     public boolean validateUser() {
+        boolean result = true;
         if (this.email == null || this.email.isEmpty()) {
-            return false;
+            result = false;
         }
         if (this.firstname == null || this.firstname.isEmpty()) {
-            return false;
+            result = false;
         }
         if (this.lastname == null || this.lastname.isEmpty()) {
-            return false;
+            result = false;
         }
-        return true;
+        return result;
     }
 }

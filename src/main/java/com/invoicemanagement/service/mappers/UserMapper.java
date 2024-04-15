@@ -1,14 +1,15 @@
-package com.invoicemanagement.service.Mappers;
+package com.invoicemanagement.service.mappers;
 
-import com.invoicemanagement.service.Classes.User;
+import com.invoicemanagement.service.classes.User;
 import com.invoicemanagement.repositories.entities.UserDTO;
 
 public class UserMapper {
-    public static User UserDTOToUser(UserDTO userdto) {
+    private UserMapper(){}
+    public static User userDTOToUser(UserDTO userdto) {
         return new User(userdto.getUuid(), userdto.getEmail(), userdto.getFirstname(), userdto.getLastname());
     }
 
-    public static UserDTO UserToUserDTO(User user) {
+    public static UserDTO userToUserDTO(User user) {
         UserDTO userdto = new UserDTO();
         userdto.setUuid(user.getUuid());
         userdto.setEmail(user.getEmail());

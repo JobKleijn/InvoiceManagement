@@ -1,9 +1,9 @@
 package com.invoicemanagement.service;
 
-import com.invoicemanagement.service.Classes.User;
+import com.invoicemanagement.service.classes.User;
 import com.invoicemanagement.repositories.IUserRepository;
 import com.invoicemanagement.repositories.entities.UserDTO;
-import com.invoicemanagement.service.Mappers.UserMapper;
+import com.invoicemanagement.service.mappers.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +15,10 @@ public class UserContainer {
         this.userRepository = userRepository;
     }
     public boolean createUser(UserDTO userdto) {
-        User user = UserMapper.UserDTOToUser(userdto);
+        User user = UserMapper.userDTOToUser(userdto);
         if (user.validateUser()) {
             user.setUuid();
-            userdto = UserMapper.UserToUserDTO(user);
+            userdto = UserMapper.userToUserDTO(user);
             try{
                 userRepository.save(userdto);
                 return true;
