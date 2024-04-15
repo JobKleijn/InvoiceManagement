@@ -26,10 +26,7 @@ public class User {
 
     //Validates the user object
     public boolean validateUser() {
-        boolean result = true;
-        if (this.email == null || this.email.isEmpty()) {
-            result = false;
-        }
+        boolean result = this.email != null && !this.email.isEmpty();
         if (this.firstname == null || this.firstname.isEmpty()) {
             result = false;
         }
