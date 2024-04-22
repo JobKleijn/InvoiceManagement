@@ -1,7 +1,7 @@
 package com.invoicemanagement.service;
 
 import com.invoicemanagement.service.classes.User;
-import com.invoicemanagement.repositories.IUserRepository;
+import com.invoicemanagement.repositories.UserRepository;
 import com.invoicemanagement.repositories.entities.UserDTO;
 import com.invoicemanagement.service.mappers.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserContainer {
-    private final IUserRepository userRepository;
+    private final UserRepository userRepository;
     @Autowired
-    public UserContainer(IUserRepository userRepository) {
+    public UserContainer(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
     public boolean createUser(UserDTO userdto) {
