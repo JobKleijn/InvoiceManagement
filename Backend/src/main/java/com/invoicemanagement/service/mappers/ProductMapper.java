@@ -8,24 +8,24 @@ import java.util.List;
 
 public class ProductMapper {
     private ProductMapper(){}
-    public static List<Product> productDTOToProduct(List<ProductDTO> productdtos) {
+    public static List<Product> productDTOToProduct(List<ProductDTO> productDTOs) {
         List<Product> products = new ArrayList<>();
-        for (ProductDTO productdto : productdtos) {
+        for (ProductDTO productdto : productDTOs) {
             products.add(new Product(productdto.getUuid(), productdto.getDescription(), productdto.getRate(), productdto.getQuantity()));
         }
         return products;
     }
 
     public static List<ProductDTO> productToProductDTO(List<Product> products) {
-        List<ProductDTO> productdtos = new ArrayList<>();
+        List<ProductDTO> productDTOs = new ArrayList<>();
         for (Product product : products) {
             ProductDTO productdto = new ProductDTO();
             productdto.setUuid(product.getUuid());
             productdto.setDescription(product.getDescription());
             productdto.setRate(product.getRate());
             productdto.setQuantity(product.getQuantity());
-            productdtos.add(productdto);
+            productDTOs.add(productdto);
         }
-        return productdtos;
+        return productDTOs;
     }
 }

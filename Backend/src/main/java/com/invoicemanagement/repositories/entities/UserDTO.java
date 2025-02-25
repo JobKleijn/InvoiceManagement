@@ -11,14 +11,14 @@ import java.util.UUID;
 
 @Setter
 @Getter
-@Table(name = "[USER]")
+@Table(name = "[user]")
 @Entity
-public class UserDTO {
+    public class UserDTO {
     @Id
     private UUID uuid;
     @Column(unique = true)
     private String email;
     private String firstname;
     private String lastname;
-
+    private String password;
 }

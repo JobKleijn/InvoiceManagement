@@ -18,6 +18,7 @@ public class InvoiceDTO {
     private String invoiceNumber;
     private String invoiceDate;
     private String dueDate;
+    private int status;  // 0-PAID 1-PENDING 2-OVERDUE
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "product_invoice",
             joinColumns = @JoinColumn(name = "product_uuid", referencedColumnName = "uuid"),

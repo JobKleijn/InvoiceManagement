@@ -13,6 +13,7 @@ public class Product {
     private double quantity;
 
     public Product(UUID uuid, String description, double rate, double quantity) {
+        this.uuid = uuid;
         this.description = description;
         this.rate = rate;
         this.quantity = quantity;

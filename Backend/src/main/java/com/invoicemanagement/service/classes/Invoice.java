@@ -1,5 +1,7 @@
 package com.invoicemanagement.service.classes;
 
+import com.invoicemanagement.service.enums.Status;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,13 +15,15 @@ public class Invoice {
     private String invoiceNumber;
     private String invoiceDate;
     private String dueDate;
+    private Status status;
     private List<Product> products;
 
-    public Invoice(UUID uuid, String invoiceNumber, String invoiceDate, String dueDate, List<Product> products) {
+    public Invoice(UUID uuid, String invoiceNumber, String invoiceDate, String dueDate, Status status, List<Product> products) {
         this.uuid = uuid;
         this.invoiceNumber = invoiceNumber;
         this.invoiceDate = invoiceDate;
         this.dueDate = dueDate;
+        this.status = status;
         this.products = products;
     }
 

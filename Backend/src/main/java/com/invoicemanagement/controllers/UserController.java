@@ -1,12 +1,11 @@
 package com.invoicemanagement.controllers;
 
-import com.invoicemanagement.service.UserContainer;
 import com.invoicemanagement.repositories.entities.UserDTO;
+import com.invoicemanagement.service.UserContainer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 public class UserController {
@@ -27,5 +26,12 @@ public class UserController {
         return userContainer.getUsers();
     }
 
-
+    @GetMapping("/users/{uuid}")
+    public UserDTO getUser(@PathVariable UUID uuid) {
+        return userContainer.getUser(uuid);
+    }
+    @PutMapping("/users")
+    public boolean updateUser(@RequestBody UserDTO userdto) {
+        return userContainer.updateUser(userdto);
+    }
 }
